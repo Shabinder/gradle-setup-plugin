@@ -47,11 +47,6 @@ internal fun Project.setupAndroidCommon(config: AndroidConfig) {
             minSdk = config.minSdkVersion
             targetSdk = config.targetSdkVersion
         }
-
-        compileOptions {
-            sourceCompatibility(JavaVersion.VERSION_1_8)
-            targetCompatibility(JavaVersion.VERSION_1_8)
-        }
     }
 
     tasks.withType<AndroidLintTask> {
@@ -60,11 +55,5 @@ internal fun Project.setupAndroidCommon(config: AndroidConfig) {
 
     tasks.withType<AndroidLintTextOutputTask> {
         enabled = Compilations.isGenericEnabled
-    }
-
-    tasks.withType<KotlinCompile> {
-        kotlinOptions {
-            jvmTarget = "1.8"
-        }
     }
 }
