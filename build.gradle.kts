@@ -26,7 +26,6 @@ dependencies {
         implementation(i18n4k.gradle.plugin)
         implementation(kotlin.serialization)
         implementation(google.services)
-        implementation(google.services)
         implementation(firebase.plugins.crashlytics)
     }
 
