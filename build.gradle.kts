@@ -39,6 +39,7 @@ dependencies {
     compileOnly("org.jetbrains.kotlinx:binary-compatibility-validator:0.12.1")
     compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0")
     compileOnly(files(deps.javaClass.superclass.protectionDomain.codeSource.location))
+    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.2.0-alpha16")
     testImplementation(kotlin("test"))
 }
 
