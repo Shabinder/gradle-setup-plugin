@@ -7,7 +7,7 @@ import kotlin.reflect.full.memberProperties
 
 object SoundBoundConfig {
     const val APP_VERSION: String = "0.0.3"
-    const val APP_VERSION_CODE: Long = 3L
+    const val APP_VERSION_CODE: Long = 4L
 }
 
 fun Project.setupBuildConfig(
