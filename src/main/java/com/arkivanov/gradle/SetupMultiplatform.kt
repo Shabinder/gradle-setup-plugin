@@ -3,6 +3,7 @@ package com.arkivanov.gradle
 import org.gradle.api.NamedDomainObjectCollection
 import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.Project
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
@@ -12,10 +13,20 @@ import org.jetbrains.kotlin.konan.target.Family
 import kotlin.properties.PropertyDelegateProvider
 import kotlin.properties.ReadOnlyProperty
 
+@OptIn(ExperimentalKotlinGradlePluginApi::class)
 fun Project.setupMultiplatform(
     targets: MultiplatformConfigurator = requireDefaults(),
 ) {
     multiplatformExtension.apply {
+        targetHierarchy.custom {
+            common {
+                group("jvm") {
+                    withAndroidTarget()
+                    withJvm()
+                }
+            }
+        }
+
         with(targets) { invoke() }
 
         setupSourceSets {
