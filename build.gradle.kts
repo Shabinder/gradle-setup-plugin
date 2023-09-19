@@ -37,11 +37,11 @@ dependencies {
     }
 //    implementation("com.guardsquare:proguard-gradle:7.3.2")
     implementation("com.github.gmazzo.buildconfig:plugin:4.0.4")
-    compileOnly("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.3.1")
+    compileOnly("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.15.0")
     compileOnly("org.jetbrains.kotlinx:binary-compatibility-validator:0.13.2")
-    compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0")
+    compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.1")
     compileOnly(files(deps.javaClass.superclass.protectionDomain.codeSource.location))
-    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.2.0-beta02")
+    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.2.0-beta05")
     testImplementation(kotlin("test"))
 }
 
