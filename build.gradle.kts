@@ -9,6 +9,7 @@ version = "0.0.1"
 
 repositories {
     gradlePluginPortal()
+    mavenLocal()
     mavenCentral()
     google()
 }
