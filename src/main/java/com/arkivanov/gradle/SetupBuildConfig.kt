@@ -6,8 +6,8 @@ import org.gradle.kotlin.dsl.configure
 import kotlin.reflect.full.memberProperties
 
 object SoundBoundConfig {
-    const val APP_VERSION: String = "0.0.17"
-    const val APP_VERSION_CODE: Long = 22L
+    const val APP_VERSION: String = "0.0.18"
+    const val APP_VERSION_CODE: Long = 23L
 }
 
 fun Project.setupBuildConfig(
