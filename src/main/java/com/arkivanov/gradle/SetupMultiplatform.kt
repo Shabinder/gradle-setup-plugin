@@ -18,16 +18,14 @@ fun Project.setupMultiplatform(
     targets: MultiplatformConfigurator = requireDefaults(),
 ) {
     multiplatformExtension.apply {
-//        targetHierarchy.custom {
-//            common {
-//                group("jvm") {
-//                    withAndroidTarget()
-//                    withJvm()
-//                }
-//            }
-//        }
-
-        applyDefaultHierarchyTemplate()
+        targetHierarchy.custom {
+            common {
+                group("jvm") {
+                    withAndroidTarget()
+                    withJvm()
+                }
+            }
+        }
 
         with(targets) { invoke() }
 
