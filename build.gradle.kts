@@ -35,6 +35,7 @@ dependencies {
         implementation(firebase.plugins.crashlytics)
     }
 //    implementation("com.guardsquare:proguard-gradle:7.3.2")
+//    implementation("land.sungbin.composeinvestigator:composeinvestigator-gradle-plugin:1.5.11-0.2.1")
     implementation("com.github.gmazzo.buildconfig:plugin:4.0.4")
     compileOnly("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.15.0")
     compileOnly("org.jetbrains.kotlinx:binary-compatibility-validator:0.14.0")
