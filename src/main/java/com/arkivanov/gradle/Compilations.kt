@@ -61,9 +61,8 @@ internal fun Family.isCompilationAllowed(): Boolean =
         Family.WATCHOS -> Compilations.isDarwinEnabled
 
         Family.LINUX,
-        Family.ANDROID,
-        Family.WASM -> Compilations.isGenericEnabled
+        Family.ANDROID-> Compilations.isGenericEnabled
 
         Family.MINGW -> Compilations.isWindowsEnabled
-        Family.ZEPHYR -> error("Unsupported family: $this")
+        else -> false
     }

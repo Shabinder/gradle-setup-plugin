@@ -6,7 +6,7 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         create("deps") {
-            from("io.github.shabinder:soundbound-extensions-catalog:0.16")
+            from("io.github.shabinder:soundbound-extensions-catalog:0.17")
             library("google-services", "com.google.gms:google-services:4.3.15")
             library("firebase-bom", "com.google.firebase:firebase-bom:31.5.0")
             library("firebase-remote-config", "dev.gitlive:firebase-config:1.13.0")
