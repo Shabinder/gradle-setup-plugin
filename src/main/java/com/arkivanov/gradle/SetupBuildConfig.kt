@@ -1,13 +1,15 @@
 package com.arkivanov.gradle
 
-import com.github.gmazzo.gradle.plugins.BuildConfigExtension
+import com.github.gmazzo.buildconfig.BuildConfigExtension
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.buildConfigField
 import org.gradle.kotlin.dsl.configure
 import kotlin.reflect.full.memberProperties
 
 object SoundBoundConfig {
-    const val APP_VERSION: String = "0.0.32"
-    const val APP_VERSION_CODE: Long = 41L
+    const val APP_VERSION: String = "0.0.33"
+    const val APP_VERSION_CODE: Long = 42L
+    const val IS_DEBUG: Boolean = false
 }
 
 fun Project.setupBuildConfig(

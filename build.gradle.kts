@@ -36,12 +36,17 @@ dependencies {
     }
 //    implementation("com.guardsquare:proguard-gradle:7.3.2")
 //    implementation("land.sungbin.composeinvestigator:composeinvestigator-gradle-plugin:1.5.11-0.2.1")
-    implementation("com.github.gmazzo.buildconfig:plugin:4.0.4")
+    implementation("com.github.gmazzo.buildconfig:plugin:5.4.0") {
+        version {
+            strictly("5.4.0")
+        }
+    }
+    implementation("io.github.izhangzhihao:plugin:1.0.3")
     compileOnly("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.15.0")
-    compileOnly("org.jetbrains.kotlinx:binary-compatibility-validator:0.14.0")
+    compileOnly("org.jetbrains.kotlinx:binary-compatibility-validator:0.16.3")
     compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.3")
     compileOnly(files(deps.javaClass.superclass.protectionDomain.codeSource.location))
-    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.2.4")
+    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.3.0")
     testImplementation(kotlin("test"))
 }
 
