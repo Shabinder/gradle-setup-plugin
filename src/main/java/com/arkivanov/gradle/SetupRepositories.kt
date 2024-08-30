@@ -16,6 +16,7 @@ fun RepositoryHandler.setupRepos() {
     google()
     mavenCentral()
     maven(url = "https://jitpack.io")
+    maven(url = "https://maven.google.com/")
     maven(url = "https://maven.pkg.jetbrains.space/public/p/compose/dev")
     maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
     maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
