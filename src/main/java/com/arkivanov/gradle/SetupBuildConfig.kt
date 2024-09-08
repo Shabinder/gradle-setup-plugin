@@ -9,14 +9,18 @@ import kotlin.reflect.full.memberProperties
 object SoundBoundConfig {
     const val APP_VERSION: String = "0.0.34"
     const val APP_VERSION_CODE: Long = 43L
-    const val IS_DEBUG: Boolean = false
+}
+
+enum class BuildType {
+    DEBUG, RELEASE, STAGING
 }
 
 fun Project.setupBuildConfig(
-    configure: BuildConfigExtension.() -> Unit = {}
+    configure: BuildConfigExtension.(buildType: BuildType) -> Unit = {}
 ) {
     plugins.apply("com.github.gmazzo.buildconfig")
     extensions.configure<BuildConfigExtension> {
+        generateAtSync.set(true)
         className("SoundBoundConfig")   // forces the class name. Defaults to 'BuildConfig'
         packageName("in.shabinder.soundbound")
         useKotlinOutput {
@@ -35,6 +39,17 @@ fun Project.setupBuildConfig(
                 else -> buildConfigField(it.returnType.toString(), it.name, it.call().toString())
             }
         }
-        configure()
+        val currentBuildType = getBuildType()
+        println("Current Build Type: $currentBuildType")
+        buildConfigField("IS_DEBUG", currentBuildType == BuildType.DEBUG)
+        configure(currentBuildType)
     }
+}
+
+// pass in the CLI, or in the gradle.properties file
+// ./gradlew -P`appFlavor`=RELEASE (without ``)
+// appFlavor=RELEASE (in gradle.properties)
+fun Project.getBuildType(): BuildType {
+    val flavor = properties["appFlavor"]?.toString() ?: BuildType.DEBUG.name
+    return BuildType.valueOf(flavor.uppercase())
 }
