@@ -43,8 +43,15 @@ fun Project.setupMultiplatform(
 
         this.targets.configureEach {
             compilations.configureEach {
-                compilerOptions.configure {
-                    freeCompilerArgs.add("-Xexpect-actual-classes")
+                compileTaskProvider.configure {
+                    compilerOptions {
+                        freeCompilerArgs.addAll(
+                            listOf(
+                                "-Xopt-in=kotlin.RequiresOptIn", "-Xmulti-platform",
+                                "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"
+                            )
+                        )
+                    }
                 }
             }
         }

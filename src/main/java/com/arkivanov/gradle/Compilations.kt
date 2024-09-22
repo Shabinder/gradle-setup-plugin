@@ -18,6 +18,7 @@ internal object Compilations {
         !EnvParams.splitTargets || predicate(OperatingSystem.current())
 }
 
+@Suppress("DEPRECATION")
 internal fun KotlinProjectExtension.disableCompilationsOfNeeded() {
     targets.forEach {
         it.disableCompilationsOfNeeded()

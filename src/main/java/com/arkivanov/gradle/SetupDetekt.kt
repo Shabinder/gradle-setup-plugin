@@ -18,7 +18,12 @@ fun Project.setupDetekt() {
         extensions.configure<DetektExtension> {
             parallel = true
             buildUponDefaultConfig = true
-            config = files("$rootDir/detekt.yml")
+            config.setFrom(
+                files(
+                    "$rootDir/detekt.yml",
+                    "$rootDir/config/detekt.yml"
+                )
+            )
         }
 
         tasks.register("detektAll") {

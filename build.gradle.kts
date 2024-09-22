@@ -17,7 +17,7 @@ repositories {
 kotlin {
     // Add Deps to compilation, so it will become available in main project
     sourceSets.getByName("main").kotlin.srcDir(
-        file("$buildDir/generated/source/buildConfig/main")
+        file("${layout.buildDirectory}/generated/source/buildConfig/main")
     )
 }
 
@@ -44,9 +44,9 @@ dependencies {
     implementation("io.github.izhangzhihao:plugin:1.0.3")
     compileOnly("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.15.0")
     compileOnly("org.jetbrains.kotlinx:binary-compatibility-validator:0.16.3")
-    compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.3")
+    compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.6")
     compileOnly(files(deps.javaClass.superclass.protectionDomain.codeSource.location))
-    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.3.0")
+    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.3.1")
     testImplementation(kotlin("test"))
 }
 
