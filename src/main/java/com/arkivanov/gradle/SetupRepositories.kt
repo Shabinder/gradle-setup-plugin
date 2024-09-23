@@ -21,4 +21,5 @@ fun RepositoryHandler.setupRepos() {
     maven(url = "https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
     maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
     maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/")
+    maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
 }
