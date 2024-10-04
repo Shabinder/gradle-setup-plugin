@@ -62,7 +62,7 @@ internal fun Family.isCompilationAllowed(): Boolean =
         Family.WATCHOS -> Compilations.isDarwinEnabled
 
         Family.LINUX,
-        Family.ANDROID-> Compilations.isGenericEnabled
+        Family.ANDROID -> Compilations.isGenericEnabled
 
         Family.MINGW -> Compilations.isWindowsEnabled
         else -> false
