@@ -44,10 +44,15 @@ dependencies {
     implementation("io.github.izhangzhihao:plugin:1.0.3")
     compileOnly("org.jetbrains.intellij.plugins:gradle-intellij-plugin:1.15.0")
     compileOnly("org.jetbrains.kotlinx:binary-compatibility-validator:0.16.3")
-    compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.6")
+    compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.7")
     compileOnly(files(deps.javaClass.superclass.protectionDomain.codeSource.location))
-    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.3.1")
+    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.3.2")
     testImplementation(kotlin("test"))
+
+
+    /* Custom KTLINT Rules */
+    compileOnly("com.pinterest.ktlint:ktlint-cli-ruleset-core:1.3.1")
+    compileOnly("com.pinterest.ktlint:ktlint-rule-engine:1.3.1")
 }
 
 gradlePlugin {
