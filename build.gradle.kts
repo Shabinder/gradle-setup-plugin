@@ -32,6 +32,7 @@ dependencies {
         implementation(i18n4k.gradle.plugin)
         implementation(kotlin.serialization)
         implementation(google.services)
+        implementation(moko.resources.generator)
         implementation(firebase.plugins.crashlytics)
     }
 //    implementation("com.guardsquare:proguard-gradle:7.3.2")
@@ -46,7 +47,7 @@ dependencies {
     compileOnly("org.jetbrains.kotlinx:binary-compatibility-validator:0.16.3")
     compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.7")
     compileOnly(files(deps.javaClass.superclass.protectionDomain.codeSource.location))
-    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.3.2")
+    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.3.3")
     testImplementation(kotlin("test"))
 
 
